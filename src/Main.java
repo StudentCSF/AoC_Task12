@@ -51,14 +51,14 @@ public class Main {
                         dfs(g, list, route, frequencyOfSmallCavesInCurrentRoute, adj);
                         frequencyOfSmallCavesInCurrentRoute.remove(route.pop());
                     } else if (SOLVE_PART_2) {
-                        boolean are2Small = false;
+                        boolean are2EqualsSmall = false;
                         for (Map.Entry<String, Boolean> kv : frequencyOfSmallCavesInCurrentRoute.entrySet()) {
-                            are2Small = kv.getValue();
-                            if (are2Small) {
+                            are2EqualsSmall = kv.getValue();
+                            if (are2EqualsSmall) {
                                 break;
                             }
                         }
-                        if (!are2Small) {
+                        if (!are2EqualsSmall) {
                             frequencyOfSmallCavesInCurrentRoute.put(adj, true);
                             dfs(g, list, route, frequencyOfSmallCavesInCurrentRoute, adj);
                             frequencyOfSmallCavesInCurrentRoute.put(route.pop(), false);
